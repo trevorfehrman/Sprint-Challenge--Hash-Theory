@@ -7,7 +7,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
 
-  // YOUR CODE HERE
+  /* YOUR CODE HERE */
 
   return NULL;
 }
@@ -24,7 +24,6 @@ void print_answer(Answer *answer)
 #ifndef TESTING
 int main(void)
 {
-
   // TEST 1
   int weights_1 = {9};
   Answer *answer_1 = get_indices_of_item_weights(&weights_1, 1, 9);
@@ -47,4 +46,5 @@ int main(void)
 
   return 0;
 }
+
 #endif

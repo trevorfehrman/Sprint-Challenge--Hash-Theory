@@ -6,10 +6,10 @@
 
 char **reconstruct_trip(Ticket **tickets, int length)
 {
-  HashTable *ht = create_hash_table(16);
+  HashTable *ht = create_hash_table(length);
   char **route = malloc(length * sizeof(char *));
 
-  // YOUR CODE HERE
+  /* YOUR CODE HERE */
 
   return route;
 }
@@ -45,6 +45,12 @@ int main(void)
   tickets[2] = ticket_3;
 
   print_route(reconstruct_trip(tickets, 3), 3); // PDX, DCA, NONE
+
+  for (int i = 0; i < 3; i++) {
+    free(tickets[i]);
+  }
+
+  free(tickets);
 
   return 0;
 }

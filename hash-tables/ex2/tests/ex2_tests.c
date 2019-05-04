@@ -25,6 +25,12 @@ char *test_short_case()
 
   mu_assert(check_string_arrays(reconstruct_trip(tickets, 3), expected, 3, 3), "Your function did not return the expected output");
 
+  for (int i = 0; i < 3; i++) {
+    free(tickets[i]);
+  }
+
+  free(tickets);
+
   return NULL;
 }
 
@@ -85,6 +91,12 @@ char *test_long_case()
   char *expected[] = { "LAX", "SFO", "BHM", "FLG", "XNA", "CID", "SLC", "PIT", "ORD", "NONE" };
 
   mu_assert(check_string_arrays(reconstruct_trip(tickets, 10), expected, 10, 10), "Your function did not return the expected output");
+
+  for (int i = 0; i < 10; i++) {
+    free(tickets[i]);
+  }
+
+  free(tickets);
 
   return NULL;
 }
