@@ -2,7 +2,7 @@
 
 This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint, we explored the history and theory of computation, diving deep into memory and pointers by building array functions and hash tables. In your challenge this week, you will demonstrate proficiency by filling out boolean truth tables and solving algorithms in C using hash tables.
 
-## Instructions
+## Instructions boop
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
