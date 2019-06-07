@@ -9,27 +9,19 @@ char **reconstruct_trip(Ticket **tickets, int length)
   HashTable *ht = create_hash_table(length);
   char **route = malloc(length * sizeof(char *));
 
-  int counter = 0;
-  // go through tickets array
+  int count = 0;
   for (int i = 0; i < length; i++)
   {
-    // add each ticket to ht in key: value fashion (source: destination)
     hash_table_insert(ht, tickets[i]->source, tickets[i]->destination);
   }
-  // search for ticket with NONE source in ht
-  Ticket *current_source = hash_table_retrieve(ht, "NONE");
-  // while current ticket destination is not "NONE"
-  // add destination to route array
-  while (strcmp(current_source, "NONE") != 0)
+  Ticket *home = hash_table_retrieve(ht, "NONE");
+  while (strcmp(home, "NONE") != 0)
   {
-    // append value to route array
-    route[counter] = current_source;
-    // find key:value pair where key is the current ticket's destination
-    current_source = hash_table_retrieve(ht, current_source);
-    counter++;
+    route[count] = home;
+    home = hash_table_retrieve(ht, home);
+    count++;
   }
-  // append "NONE" to route after loop is finished
-  route[counter] = "NONE";
+  route[count] = "NONE";
 
   destroy_hash_table(ht);
 
